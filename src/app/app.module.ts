@@ -7,6 +7,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { RouterModule } from '@angular/router';
 import { NavComponent } from './components/nav/nav.component';
 
+//PrimeNG
+import {MenuItem} from 'primeng/api';
+import {ButtonModule} from 'primeng/button';
+
+//Angular Animation
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -15,8 +22,10 @@ import { NavComponent } from './components/nav/nav.component';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     RouterModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
