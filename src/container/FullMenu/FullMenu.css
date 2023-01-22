@@ -240,7 +240,7 @@ p {
   text-align: center;
 }
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 300px) {
   .menu-item {
     grid-template-columns: 225px 1fr;
     gap: 0 1.25rem;
@@ -272,7 +272,7 @@ p {
     height: 150px;
   }
 }
-@media screen and (max-width: 610px) {
+@media screen and (max-width: 600px) {
   .btn-container {
     margin-bottom: 4rem;
     display: flex;
