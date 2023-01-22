@@ -8,12 +8,12 @@ const SpecialMenu = () => (
   <div className="app__specialMenu flex__center section__padding" id="menu">
     <div className="app__specialMenu-title">
       <SubHeading title="Menu that fits your palatte" />
-      <h1 className="headtext__cormorant">Today&apos;s Special</h1>
+      <h1 className="headtext__cormorant">Our Most Popular</h1>
     </div>
 
     <div className="app__specialMenu-menu">
       <div className="app__specialMenu-menu_wine  flex__center">
-        <p className="app__specialMenu-menu_heading">Special Rolls</p>
+        <p className="app__specialMenu-menu_heading">From Sushi Bar</p>
         <div className="app__specialMenu_menu_items">
           {data.specialRolls.map((specialRoll, index) => (
             <SpecialMenuItem key={specialRoll.title + index} title={specialRoll.title} price={specialRoll.price} tags={specialRoll.description} />
@@ -26,7 +26,7 @@ const SpecialMenu = () => (
       </div>
 
       <div className="app__specialMenu-menu_cocktails  flex__center">
-        <p className="app__specialMenu-menu_heading">Our Most Popular</p>
+        <p className="app__specialMenu-menu_heading">From Kitchen</p>
         <div className="app__specialMenu_menu_items">
           {data.specials.map((specials, index) => (
             <SpecialMenuItem key={specials.title + index} title={specials.title} price={specials.price} tags={specials.description} />
@@ -36,7 +36,7 @@ const SpecialMenu = () => (
     </div>
 
     <div style={{ marginTop: 15 }}>
-      <button type="button" className="custom__button">View More</button>
+      <button type="button" className="custom__button"><a href="/fullmenu">View Our Menu</a></button>
     </div>
   </div>
 );

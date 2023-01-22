@@ -22,6 +22,9 @@ const Navbar = () => {
         <div />
         <a href="/" className="p__opensans">Book Table</a>
       </div> */}
+      <div className="app__navbar-login">
+        <a href="https://www.epipay.com/take/en/WebOrder?STORE_CODE=MTAwMA==&table_num=MTAwMA==" className="p__opensans">Order Now</a>
+      </div>
       <div className="app__navbar-smallscreen">
         <GiHamburgerMenu color="#fff" fontSize={27} onClick={() => setToggleMenu(true)} />
         {toggleMenu && (

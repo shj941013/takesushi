@@ -8,6 +8,7 @@ const FindUs = () => (
     <div className="app__wrapper_info">
       <SubHeading title="Contact" />
       <h1 className="headtext__cormorant" style={{ marginBottom: '3rem 0 1rem 0' }}>Find Us</h1>
+      <iframe className='google_map' src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2933.0142827792306!2d-83.15847598453347!3d42.68223977916655!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8824e9927b5df42d%3A0x515f9772fdbcf08e!2sTake%20Sushi%20Japanese%20Restaurant!5e0!3m2!1sen!2sus!4v1674333103543!5m2!1sen!2sus"></iframe>
       <div className="app__wrapper-content">
       <p className="p__cormorant" style={{ color: '#DCCA87', margin: '2rem 0 0 0' }}>Our Location</p>
         <p className="p__opensans">1366 Walton Blvd, Rochester Hills, MI 48309</p>

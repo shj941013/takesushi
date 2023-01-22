@@ -18,33 +18,24 @@ const FullMenu = () => {
     const filterItems = (category) => {
         setActiveCategory(category);
 
-        if (category === "all") {
-            setMenuItems(items)
-            return;
-        }
         const newItems = items.filter((item) => item.category === category);
         setMenuItems(newItems);
     };
 
     const subCategories = [...new Set(menuItems.map((obj) => obj.subCategory))];
 
-    var dict = {}
+    const subCategorizedItems = {}
 
     subCategories.forEach((subCategory) => {
-        var set = new Set();
-        const subCategoryItems = menuItems.forEach((item) => {
+        const set = new Set();
+        menuItems.forEach((item) => {
             if (item.subCategory === subCategory) {
                 set.add(item);
             }
-
-            set.forEach(e => console.log(e))
         });
-    
 
-        return dict[subCategory] = subCategoryItems;
+        subCategorizedItems[subCategory] = set;
     });
-
-    console.log("dict: " + JSON.stringify(dict));
 
     return (
     <section className='menu app__bg'>
@@ -58,7 +49,17 @@ const FullMenu = () => {
             activeCategory={activeCategory} 
             filterItems={filterItems} 
         />
-        <Menu items={menuItems} />
+        <div>
+            { Object.entries(subCategorizedItems).map( ([key, value]) =>
+                    <div key={key}>
+                        <p className='subCategory'> { key } </p>
+                        { <Menu items={ Array.from(value) } /> }
+                        <br />
+                    </div>
+                )
+            }
+        </div>
+        {/* <Menu items={menuItems} /> */}
     </section>
     );
 };

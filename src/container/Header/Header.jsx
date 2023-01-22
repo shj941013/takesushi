@@ -10,7 +10,9 @@ const Header = () => (
       <SubHeading title="Taste of Japan" />
       <h1 className="app__header-h1">The Art of Japanese Cuisine</h1>
       <p className="p__opensans" style={{ margin: '2rem 0', fontFamily: 'cursive', fontSize: '20px' }}>Enjoy the experience</p>
-      <button type="button" className="custom__button">Explore Menu</button>
+      <div>
+        <button type="button" className="custom__button"><a href="">Order Now</a></button>
+      </div>
     </div>
 
     <div className="app__wrapper_img">

@@ -97,6 +97,11 @@
   text-transform: capitalize;
 }
 
+.google_map {
+  height: 450px;
+  width: 100%;
+}
+
 .spoon__img {
   width: 45px;
 }
@@ -164,6 +169,11 @@
 @media screen and (max-width: 450px) {
   .p__opensans {
     font-size: 12px;
+  }
+
+  .google_map {
+    height: 250px;
+    width: 100%;
   }
 
   .p__cormorant {
