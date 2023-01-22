@@ -240,7 +240,7 @@ p {
   text-align: center;
 }
 
-@media screen and (min-width: 300px) {
+@media screen and (min-width: 600px) {
   .menu-item {
     grid-template-columns: 225px 1fr;
     gap: 0 1.25rem;
@@ -279,5 +279,10 @@ p {
     justify-content: center;
     align-items: center;
     display: grid;
+  }
+  .item-text {
+    margin-bottom: 0;
+    padding-top: 1rem;
+    width: 20rem;
   }
 }
