@@ -44,11 +44,13 @@ const FullMenu = () => {
             <h2> Menu List </h2>
             <div className='underline'></div>
         </div>
-        <Categories
-            categories={categories} 
-            activeCategory={activeCategory} 
-            filterItems={filterItems} 
-        />
+        <div className='center'>
+            <Categories
+                categories={categories} 
+                activeCategory={activeCategory} 
+                filterItems={filterItems} 
+            />
+        </div>
         <div>
             { Object.entries(subCategorizedItems).map( ([key, value]) =>
                     <div key={key}>

@@ -229,7 +229,18 @@ p {
   padding-top: 1rem;
 }
 
-@media screen and (min-width: 300px) {
+.category__bar {
+  max-width: fit-content;
+}
+
+.center {
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+}
+
+@media screen and (min-width: 600px) {
   .menu-item {
     grid-template-columns: 225px 1fr;
     gap: 0 1.25rem;
@@ -242,6 +253,8 @@ p {
     margin-bottom: 4rem;
     display: flex;
     justify-content: center;
+    align-items: center;
+    /* display: grid; */
   }
 }
 @media screen and (min-width: 1200px) {
@@ -253,15 +266,18 @@ p {
     margin-bottom: 4rem;
     display: flex;
     justify-content: center;
+    width: auto;
   }
   .photo {
     height: 150px;
   }
 }
-@media screen and (max-width: 890px) {
+@media screen and (max-width: 610px) {
   .btn-container {
     margin-bottom: 4rem;
     display: flex;
-    justify-content: left;
+    justify-content: center;
+    align-items: center;
+    display: grid;
   }
 }
