@@ -11,7 +11,7 @@ const Header = () => (
       <h1 className="app__header-h1">The Art of Japanese Cuisine</h1>
       <p className="p__opensans" style={{ margin: '2rem 0', fontFamily: 'cursive', fontSize: '20px' }}>Enjoy the experience</p>
       <div>
-        <button type="button" className="custom__button"><a href="">Order Now</a></button>
+        <button type="button" className="custom__button"><a href="https://www.epipay.com/take/en/WebOrder?STORE_CODE=MTAwMA==&table_num=MTAwMA==">Order Now</a></button>
       </div>
     </div>
 

@@ -13,9 +13,9 @@ const Navbar = () => {
       </div>
       <ul className="app__navbar-links">
         <li className="p__opensans"><a href="/">Home</a></li>
-        <li className="p__opensans"><a href="about">About</a></li>
-        <li className="p__opensans"><a href="fullmenu">Menu</a></li>
-        <li className="p__opensans"><a href="contact">Contact</a></li>
+        <li className="p__opensans"><a href="/about">About</a></li>
+        <li className="p__opensans"><a href="/fullmenu">Menu</a></li>
+        <li className="p__opensans"><a href="/contact">Contact</a></li>
       </ul>
       {/* <div className="app__navbar-login">
         <a href="#login" className="p__opensans">Log In / Registration</a>
@@ -32,9 +32,9 @@ const Navbar = () => {
             <MdOutlineRestaurantMenu fontSize={27} className="overlay__close" onClick={() => setToggleMenu(false)} />
             <ul className="app__navbar-smallscreen_links">
               <li><a href="/" onClick={() => setToggleMenu(false)}>Home</a></li>
-              <li><a href="about" onClick={() => setToggleMenu(false)}>About</a></li>
-              <li><a href="fullmenu" onClick={() => setToggleMenu(false)}>Menu</a></li>
-              <li><a href="contact" onClick={() => setToggleMenu(false)}>Contact</a></li>
+              <li><a href="/about" onClick={() => setToggleMenu(false)}>About</a></li>
+              <li><a href="/fullmenu" onClick={() => setToggleMenu(false)}>Menu</a></li>
+              <li><a href="/contact" onClick={() => setToggleMenu(false)}>Contact</a></li>
             </ul>
           </div>
         )}
