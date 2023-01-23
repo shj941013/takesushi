@@ -50,6 +50,8 @@ const FullMenu = () => {
                 activeCategory={activeCategory} 
                 filterItems={filterItems} 
             />
+            <p>Consuming raw or undercooked meats, poultry, seafood, shellfish or eggs may increase your risk of food borne illness</p>
+            <p>** Dish served raw</p>
         </div>
         <div>
             { Object.entries(subCategorizedItems).map( ([key, value]) =>
