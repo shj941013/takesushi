@@ -184,7 +184,7 @@ const menu = [
       pdf: null
     },
     {
-      id: 17,
+      id: 42,
       title: 'Yaki Soba',
       category: 'Noodles',
       subCategory: 'Noodles',
@@ -194,7 +194,7 @@ const menu = [
       pdf: null
     },
     {
-      id: 18,
+      id: 43,
       title: 'Chicken Teriyaki',
       category: 'Entrees',
       subCategory: 'Teriyaki',
@@ -274,7 +274,7 @@ const menu = [
       pdf: null
     },
     {
-      id: 24,
+      id: 44,
       title: 'Bulgogi',
       category: 'Entrees',
       subCategory: 'Rice',

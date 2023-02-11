@@ -1,0 +1,32 @@
+.subCategory {
+    text-align: center;
+    font-family: var(--font-base);
+    color: var(--color-golden);
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: capitalize;
+    line-height: 117px;
+    font-size: 80px;
+}
+.search {
+    align-items: center;
+    align-content: center;
+    text-align: center;
+}
+.search input {
+    align-items: center;
+    align-content: center;
+    background-color: white;
+    border: 0;
+    border-radius: 2px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    font-size: 18px;
+    padding: 15px;
+    height: 30px;
+    width: 300px;
+}
+  
+/* input:focus {
+    outline: none;
+} */

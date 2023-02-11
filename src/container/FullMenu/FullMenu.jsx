@@ -7,6 +7,7 @@ import { items } from '../../constants'
 
 import { Categories, Menu } from '../../components';
 import './FullMenu.css';
+import SearchBar from '../SearchBar/SearchBar';
 
 const allCategories = ["all", ...new Set(items.map((item) => item.category))];
 
@@ -18,6 +19,11 @@ const FullMenu = () => {
     const filterItems = (category) => {
         setActiveCategory(category);
 
+        if (category === "all") {
+            setMenuItems(items);
+            return;
+        }
+
         const newItems = items.filter((item) => item.category === category);
         setMenuItems(newItems);
     };
@@ -28,6 +34,7 @@ const FullMenu = () => {
 
     subCategories.forEach((subCategory) => {
         const set = new Set();
+
         menuItems.forEach((item) => {
             if (item.subCategory === subCategory) {
                 set.add(item);
@@ -53,17 +60,8 @@ const FullMenu = () => {
             <p>Consuming raw or undercooked meats, poultry, seafood, shellfish or eggs may increase your risk of food borne illness</p>
             <p>** Dish served raw</p>
         </div>
-        <div>
-            { Object.entries(subCategorizedItems).map( ([key, value]) =>
-                    <div key={key}>
-                        <p className='subCategory'> { key } </p>
-                        { <Menu items={ Array.from(value) } /> }
-                        <br />
-                    </div>
-                )
-            }
-        </div>
-        {/* <Menu items={menuItems} /> */}
+
+        <SearchBar placeholder="🔎🍱 SEARCH" items={subCategorizedItems} />
     </section>
     );
 };

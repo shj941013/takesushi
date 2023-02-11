@@ -41,7 +41,7 @@ const specials = [
         id: 3,
         title: "Bulgogi",
         description: "Thin sliced beef with onion, mushroom, green onion, sesame oil with our special house sauce.",
-        price: "15.95"
+        price: "23.95"
     }
 ]
 
