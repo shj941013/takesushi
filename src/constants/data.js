@@ -23,19 +23,19 @@ const specials = [
         id: 0,
         title: "Chicken Teriyaki",
         description: "Broiled chicken breast with our special teriyaki sauce",
-        price: "16.99"
+        price: "18.95"
     },
     {
         id: 1,
         title: "Don Katsu",
         description: "Fried readed pork cutlet served wtih delicious cutlet sauce.",
-        price: "16.95"
+        price: "18.95"
     },
     {
         id: 2,
         title: "Bibimbob",
         description: "Hot stoned bowl with mixed vegetables with choice of protein (Beef, Chicken of Tofu).",
-        price: "15.95"
+        price: "16.95"
     },
     {
         id: 3,
