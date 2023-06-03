@@ -6,7 +6,7 @@ const menu = [
       title: 'Tako Su',
       category: 'appetizers',
       subCategory: 'Sashimi',
-      price: '9.95',
+      price: '10.95',
       desc: 'Octopus with light vinegar sauce',
       // img: images.assortment,
       img: null,
@@ -17,7 +17,7 @@ const menu = [
       title: 'Tuna Tataki**',
       category: 'appetizers',
       subCategory: 'Sashimi',
-      price: '16.95',
+      price: '18.95',
       desc: 'Seared tuna with ponzu sauce',
       // img: images.assortment,
       img: null,
@@ -38,7 +38,7 @@ const menu = [
       title: 'Ebi(SHRIMP) Tempura**',
       category: 'appetizers',
       subCategory: 'Kitchen',
-      price: '10.95',
+      price: '11.95',
       desc: '4-piece fried shrimp',
       img: null,
       pdf: null
@@ -78,7 +78,7 @@ const menu = [
       title: 'Gyoza',
       category: 'appetizers',
       subCategory: 'Kitchen',
-      price: '4.95',
+      price: '5.95',
       desc: 'Fried minced meat & vegetable dumpling',
       img: null,
       pdf: null
@@ -88,7 +88,7 @@ const menu = [
       title: 'Ebi Shumai',
       category: 'appetizers',
       subCategory: 'Kitchen',
-      price: '4.95',
+      price: '5.95',
       desc: 'Steamed shrimp dumpling',
       img: null,
       pdf: null
@@ -158,7 +158,7 @@ const menu = [
       title: 'Nabeyaki Udon',
       category: 'Noodles',
       subCategory: 'Noodles',
-      price: '13.95',
+      price: '14.95',
       desc: 'Thick noodle soup with egg, mushrooms, green onion, Napa, kamaboko & shrimp tempura',
       img: null,
       pdf: null
@@ -168,7 +168,7 @@ const menu = [
       title: 'Tempura Udon',
       category: 'Noodles',
       subCategory: 'Noodles',
-      price: '12.95',
+      price: '13.95',
       desc: 'Thick noodle soup with mushrooms, green onion, kamaboko & shrimp tempura',
       img: null,
       pdf: null
@@ -178,7 +178,7 @@ const menu = [
       title: 'Tempura Soba',
       category: 'Noodles',
       subCategory: 'Noodles',
-      price: '12.95',
+      price: '13.95',
       desc: 'Buckwheat noodle soup with green onion,mushroom and kamaboko and shrimp tempura on the side',
       img: null,
       pdf: null
@@ -188,7 +188,7 @@ const menu = [
       title: 'Yaki Soba',
       category: 'Noodles',
       subCategory: 'Noodles',
-      price: '15.95',
+      price: '17.95',
       desc: 'Pan fried noodle with chicken, assorted vegetable and house sauce',
       img: null,
       pdf: null
@@ -198,7 +198,7 @@ const menu = [
       title: 'Chicken Teriyaki',
       category: 'Entrees',
       subCategory: 'Teriyaki',
-      price: '16.95',
+      price: '18.95',
       desc: 'Broiled chicken breast with teriyaki sauce',
       img: null,
       pdf: null
@@ -208,7 +208,7 @@ const menu = [
       title: 'Salmon Teriyaki',
       category: 'Entrees',
       subCategory: 'Teriyaki',
-      price: '20.95',
+      price: '22.95',
       desc: 'Broiled Salmon with teriyaki sauce',
       img: null,
       pdf: null
@@ -218,7 +218,7 @@ const menu = [
       title: 'Don Katsu',
       category: 'Entrees',
       subCategory: 'Katsu',
-      price: '16.95',
+      price: '18.95',
       desc: 'Fried breaded pork cutlet served with delicious cutlet sauce',
       img: null,
       pdf: null
@@ -238,7 +238,7 @@ const menu = [
       title: 'Katsu Don',
       category: 'Entrees',
       subCategory: 'Don',
-      price: '15.95',
+      price: '16.95',
       desc: 'Pork cutlet, onion, mushroom, green onion, kamaboko & egg with sweet soy sauce over the rice',
       img: null,
       pdf: null
@@ -248,7 +248,7 @@ const menu = [
       title: 'Chicken Don',
       category: 'Entrees',
       subCategory: 'Don',
-      price: '15.95',
+      price: '16.95',
       desc: 'Chicken cutlet, onion, mushroom, green onion, kamaboko & egg with sweet soy sauce over the rice',
       img: null,
       pdf: null
@@ -268,7 +268,7 @@ const menu = [
       title: 'Bibimbob',
       category: 'Entrees',
       subCategory: 'Rice',
-      price: '15.95',
+      price: '16.95',
       desc: 'Hot stone bowl with mixed vegetables (Beef, Chicken or Tofu)',
       img: null,
       pdf: null
@@ -298,7 +298,7 @@ const menu = [
       title: 'Ebi Tempura',
       category: 'Entrees',
       subCategory: 'Tempura',
-      price: '18.95',
+      price: '19.95',
       desc: '7-piece fried shrimp & 2-piece fried vegetables served with tempura sauce',
       img: null,
       pdf: null
@@ -405,31 +405,21 @@ const menu = [
     },
     {
       id: 36,
-      title: '14-Piece Sashimi Regular**',
+      title: '15-Piece Sashimi Regular**',
       category: 'Sushi & Sashimi',
       subCategory: 'Sushi & Sashimi Combos',
-      price: '29.95',
-      desc: '14-pieces of chef\'s selection of gourmet fresh sashimi',
+      price: '34.95',
+      desc: '15-pieces of chef\'s selection of gourmet fresh sashimi',
       img: null,
       pdf: null
     },
     {
       id: 37,
-      title: '17-Piece Sashimi Regular**',
-      category: 'Sushi & Sashimi',
-      subCategory: 'Sushi & Sashimi Combos',
-      price: '35.95',
-      desc: '17-pieces of chef\'s selection of gourmet fresh sashimi',
-      img: null,
-      pdf: null
-    },
-    {
-      id: 38,
-      title: '24-Piece Sashimi Regular**',
+      title: '22-Piece Sashimi Regular For 2**',
       category: 'Sushi & Sashimi',
       subCategory: 'Sushi & Sashimi Combos',
       price: '60.00',
-      desc: '24-pieces of chef\'s selection of gourmet fresh sashimi',
+      desc: '22-pieces of chef\'s selection of gourmet fresh sashimi',
       img: null,
       pdf: null
     },
@@ -438,7 +428,7 @@ const menu = [
       title: '#1 Roll Combination**',
       category: 'Sushi & Sashimi',
       subCategory: 'Sushi & Sashimi Combos',
-      price: '17.00',
+      price: '17.50',
       desc: 'California, Tuna & East roll',
       img: null,
       pdf: null
@@ -458,7 +448,7 @@ const menu = [
       title: '#3 Roll Combination**',
       category: 'Sushi & Sashimi',
       subCategory: 'Sushi & Sashimi Combos',
-      price: '24.95',
+      price: '25.45',
       desc: 'Dragon, Tuna & Alaskan roll',
       img: null,
       pdf: null
