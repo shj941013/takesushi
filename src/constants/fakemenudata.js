@@ -104,11 +104,21 @@ const menu = [
       pdf: null
     },
     {
+      id: 50,
+      title: 'Spicy Crispy Kalamari',
+      category: 'appetizers',
+      subCategory: 'Kitchen',
+      price: '7.95',
+      desc: 'Fried calamari and house sauce',
+      img: null,
+      pdf: null
+    },
+    {
       id: 10,
       title: 'Alaskan soup',
       category: 'Soup & Salad',
       subCategory: 'Soup',
-      price: '9.95',
+      price: '10.95',
       desc: 'Egg drop soup with crabmeat, shrimp and green onion',
       img: null,
       pdf: null
@@ -118,7 +128,7 @@ const menu = [
       title: 'Kinoko Soup (For Two)',
       category: 'Soup & Salad',
       subCategory: 'Soup',
-      price: '8.95',
+      price: '9.95',
       desc: '2 varieties of mushroom, broccoli in soup',
       img: null,
       pdf: null
@@ -158,7 +168,7 @@ const menu = [
       title: 'Nabeyaki Udon',
       category: 'Noodles',
       subCategory: 'Noodles',
-      price: '14.95',
+      price: '15.95',
       desc: 'Thick noodle soup with egg, mushrooms, green onion, Napa, kamaboko & shrimp tempura',
       img: null,
       pdf: null
@@ -168,7 +178,7 @@ const menu = [
       title: 'Tempura Udon',
       category: 'Noodles',
       subCategory: 'Noodles',
-      price: '13.95',
+      price: '14.95',
       desc: 'Thick noodle soup with mushrooms, green onion, kamaboko & shrimp tempura',
       img: null,
       pdf: null
@@ -178,7 +188,7 @@ const menu = [
       title: 'Tempura Soba',
       category: 'Noodles',
       subCategory: 'Noodles',
-      price: '13.95',
+      price: '14.95',
       desc: 'Buckwheat noodle soup with green onion,mushroom and kamaboko and shrimp tempura on the side',
       img: null,
       pdf: null
@@ -188,8 +198,18 @@ const menu = [
       title: 'Yaki Soba',
       category: 'Noodles',
       subCategory: 'Noodles',
-      price: '17.95',
+      price: '18.95',
       desc: 'Pan fried noodle with chicken, assorted vegetable and house sauce',
+      img: null,
+      pdf: null
+    },
+    {
+      id: 51,
+      title: 'Yaki Udon',
+      category: 'Noodles',
+      subCategory: 'Noodles',
+      price: '18.95',
+      desc: 'Pan fried thick noodle with chicken, assorted vegetable and house sauce',
       img: null,
       pdf: null
     },
@@ -208,7 +228,7 @@ const menu = [
       title: 'Salmon Teriyaki',
       category: 'Entrees',
       subCategory: 'Teriyaki',
-      price: '22.95',
+      price: '23.95',
       desc: 'Broiled Salmon with teriyaki sauce',
       img: null,
       pdf: null
@@ -228,7 +248,7 @@ const menu = [
       title: 'Chicken Katsu',
       category: 'Entrees',
       subCategory: 'Katsu',
-      price: '16.95',
+      price: '17.95',
       desc: 'Fried breaded chicken cutlet served with delicious cutlet sauce',
       img: null,
       pdf: null
@@ -238,7 +258,7 @@ const menu = [
       title: 'Katsu Don',
       category: 'Entrees',
       subCategory: 'Don',
-      price: '16.95',
+      price: '17.95',
       desc: 'Pork cutlet, onion, mushroom, green onion, kamaboko & egg with sweet soy sauce over the rice',
       img: null,
       pdf: null
@@ -268,7 +288,7 @@ const menu = [
       title: 'Bibimbob',
       category: 'Entrees',
       subCategory: 'Rice',
-      price: '16.95',
+      price: '17.95',
       desc: 'Hot stone bowl with mixed vegetables (Beef, Chicken or Tofu)',
       img: null,
       pdf: null
