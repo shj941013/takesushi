@@ -31,7 +31,7 @@ The UI shows loading and disables the form while sending. Success requires HTTP 
    | --- | --- |
    | RESEND_API_KEY | Newly rotated Resend sending key |
    | CATERING_FROM_EMAIL | A bare sender address on the verified domain, e.g. catering@takesushimichigan.com |
-   | CATERING_TO_EMAIL | Restaurant notification inbox; currently hjsong240@gmail.com if still desired |
+   | CONTACT_EMAIL | Restaurant notification inbox; default catering@takesushimichigan.com |
 
    Do not prefix these with REACT_APP_. Do not put the key in netlify.toml or a tracked file. The FROM value must be a bare email address, not a display-name expression. The customer email is used only as Reply-To, never as From.
 4. Keep the site's base directory at this repository root. netlify.toml specifies `npm run build`, `build`, and `netlify/functions`. Confirm the function runtime uses Node 22. Resend requires Node 20+.
@@ -71,3 +71,23 @@ Only the configured restaurant receives the message. Provider errors and missing
 No deployment, DNS change, Netlify environment change, or real email send was performed during implementation.
 
 References: [Netlify Functions configuration](https://docs.netlify.com/build/functions/configuration/), [Netlify rate limits](https://docs.netlify.com/manage/security/secure-access-to-sites/rate-limiting/), [Resend SDK](https://github.com/resend/resend-node), [Resend domain verification](https://resend.com/docs/dashboard/domains/introduction), [Resend idempotency](https://resend.com/changelog/idempotency-keys).
+
+
+## Recipient update
+
+All notification recipients in this checkout use server-only CONTACT_EMAIL with catering@takesushimichigan.com as the default for absent/blank values. The retired CATERING_TO_EMAIL setting is ignored. Existing CATERING_FROM_EMAIL, RESEND_API_KEY, and valid customer Reply-To are unchanged. No DNS configuration is modified.
+
+This repository contains only a catering inquiry handler. Its /contact route contains phone links and a map, not a contact form; no separate contact-email integration or jason.song address was found. Source verification covers the existing catering form, not an unidentified external contact form.
+
+Set CONTACT_EMAIL=catering@takesushimichigan.com in the existing Netlify project's Functions scope (production and any relevant preview contexts). This setting is not placed in the frontend. The old recipient variable can remain unused; no sender or key change is required. Production deployment requires an authenticated Netlify account and the existing site identity.
+
+Recipient override/default/invalid-value tests added. All 14 server tests and 21 frontend regressions pass. No real notification was sent during testing.
+
+
+### Production publication: October 13, 2026
+
+Deployed to the existing takesushimichigan.com Netlify site (chipper-rugelach-44600e), deployment 6acdb67be965e12a756a7c93. Set CONTACT_EMAIL=catering@takesushimichigan.com for all deploy contexts. This Netlify account does not allow Functions-only scope without an upgrade, so the recipient uses the plan-supported all-scope setting (builds/functions/runtime/post_processing). It remains a server-consumed variable and is not exposed by CRA. Sender and API key values were compared before/after and remained unchanged. The old CATERING_TO_EMAIL variable remains untouched but is ignored by the new source. DNS was not modified.
+
+Production build and all 35 tests passed (14 server, 21 frontend). Live homepage, /contact, and /catering return HTTP 200. The live API returns HTTP 405 to GET and HTTP 422 with an email-field error for a deliberately invalid POST. The invalid POST never invokes email delivery. No real test email was sent and inbox delivery was not confirmed. The checkout has no separate contact inquiry form or handler; the recipient update covers its catering handler.
+
+This was a direct CLI production deployment, not a Git push. Commit/push the source changes before the next Git-based deployment so that a subsequent build from master retains the new recipient logic.

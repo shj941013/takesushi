@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import { createHandler, config, escapeHtml } from '../functions/catering-inquiry.js';
 
 const clock = Date.parse('2026-10-12T16:00:00Z');
-const env = { RESEND_API_KEY: 'test-only-not-a-real-key', CATERING_FROM_EMAIL: 'catering@takesushimichigan.com', CATERING_TO_EMAIL: 'restaurant@example.com' };
+const env = { RESEND_API_KEY: 'test-only-not-a-real-key', CATERING_FROM_EMAIL: 'catering@takesushimichigan.com', CONTACT_EMAIL: 'restaurant@example.com' };
 const payload = { name: 'Test Guest', email: 'customer@example.com', phone: '(248) 555-0100', date: '2099-11-05', guests: '20', event: 'Private parties', preference: 'Delivery', location: 'Test location', selections: ['Classic sushi rolls'], budget: '$300', requests: 'No peanuts', website: '', requestId: 'd3363b2e-e577-4a71-954b-eebc243be11d', startedAt: clock - 5000 };
 function request(values = payload, options = {}) {
   return new Request('https://takesushimichigan.com/api/catering-inquiry', { method: 'POST', headers: { Origin: 'https://takesushimichigan.com', 'Content-Type': 'application/json', ...options.headers }, body: JSON.stringify(values), ...options });
@@ -20,7 +20,7 @@ test('notifies only the restaurant, includes all fields, and sets customer Reply
   assert.equal(res.status, 200);
   assert.deepEqual(await res.json(), { accepted: true, emailId: 'mock-email-id' });
   assert.equal(sent.length, 1);
-  assert.deepEqual(sent[0].mail.to, [env.CATERING_TO_EMAIL]);
+  assert.deepEqual(sent[0].mail.to, [env.CONTACT_EMAIL]);
   assert.equal(sent[0].mail.replyTo, payload.email);
   for (const value of ['Test Guest', 'customer@example.com', '(248) 555-0100', '2099-11-05', '20', 'Private parties', 'Delivery', 'Test location', 'Classic sushi rolls', '$300', 'No peanuts']) assert.ok(sent[0].mail.text.includes(value));
   assert.ok(sent[0].options.signal instanceof AbortSignal);
@@ -122,7 +122,24 @@ test('the installed Resend SDK serializes Reply-To and idempotency correctly (mo
     assert.equal((await response.json()).emailId, 'sdk-mock-email-id');
     const mail = JSON.parse(captured.options.body);
     assert.equal(mail.reply_to, payload.email);
-    assert.deepEqual(mail.to, [env.CATERING_TO_EMAIL]);
+    assert.deepEqual(mail.to, [env.CONTACT_EMAIL]);
     assert.ok(new Headers(captured.options.headers).get('Idempotency-Key').startsWith('catering/'));
   } finally { globalThis.fetch = originalFetch; }
+});
+
+
+test('recipient defaults to catering inbox and ignores the retired setting', async () => {
+  for (const override of [{ CONTACT_EMAIL: undefined }, { CONTACT_EMAIL: '  ' }, { CONTACT_EMAIL: undefined, CATERING_TO_EMAIL: 'legacy@example.com' }]) {
+    const { handler, sent } = setup(undefined, { env: { ...env, ...override } });
+    assert.equal((await handler(request())).status, 200);
+    assert.deepEqual(sent[0].mail.to, ['catering@takesushimichigan.com']);
+    assert.equal(sent[0].mail.from, env.CATERING_FROM_EMAIL);
+    assert.equal(sent[0].mail.replyTo, payload.email);
+  }
+});
+
+test('invalid configured recipient fails closed without altering the sender', async () => {
+  const { handler, sent } = setup(undefined, { env: { ...env, CONTACT_EMAIL: 'not-an-email' } });
+  assert.equal((await handler(request())).status, 503);
+  assert.equal(sent.length, 0);
 });

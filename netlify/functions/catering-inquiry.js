@@ -75,7 +75,7 @@ export function createHandler({ env = process.env, makeClient = key => new Resen
     if (!UUID.test(payload.requestId || '') || !Number.isSafeInteger(payload.startedAt)) return json(400, { message: 'Please reload the page and try again.' });
     if (now() - payload.startedAt < 2000) return json(429, { message: 'Please take a moment to review your inquiry, then try again.' }, { 'Retry-After': '2' });
     const from = env.CATERING_FROM_EMAIL?.trim();
-    const to = env.CATERING_TO_EMAIL?.trim();
+    const to = env.CONTACT_EMAIL?.trim() || 'catering@takesushimichigan.com';
     if (!env.RESEND_API_KEY || !isEmail(from) || !isEmail(to)) return json(503, { message: 'Online inquiries are temporarily unavailable. Please call (248) 652-7800.' });
     const mail = { from, to: [to], replyTo: values.email, ...formatEmail(values) };
     // Bind retry keys to the exact email so an edited payload cannot conflict.

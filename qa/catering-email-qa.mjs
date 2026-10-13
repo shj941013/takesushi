@@ -8,7 +8,7 @@ const types={'.html':'text/html','.js':'text/javascript','.css':'text/css','.png
 import { createHandler } from '../netlify/functions/catering-inquiry.js';
 let providerCalls=0;
 const keys=[];
-const handler=createHandler({env:{RESEND_API_KEY:'mock-only',CATERING_FROM_EMAIL:'catering@example.com',CATERING_TO_EMAIL:'restaurant@example.com'},makeClient:()=>({emails:{send:async(mail,options)=>{providerCalls++;keys.push(options.idempotencyKey);await new Promise(r=>setTimeout(r,250));return providerCalls===1?{data:null,error:{message:'Simulated rejection'}}:{data:{id:'mock-browser-email-id'},error:null};}}})});
+const handler=createHandler({env:{RESEND_API_KEY:'mock-only',CATERING_FROM_EMAIL:'catering@example.com',CONTACT_EMAIL:'restaurant@example.com'},makeClient:()=>({emails:{send:async(mail,options)=>{providerCalls++;keys.push(options.idempotencyKey);await new Promise(r=>setTimeout(r,250));return providerCalls===1?{data:null,error:{message:'Simulated rejection'}}:{data:{id:'mock-browser-email-id'},error:null};}}})});
 const server=http.createServer(async(req,res)=>{
  if(req.url==='/api/catering-inquiry'){
   const chunks=[];for await(const chunk of req)chunks.push(chunk);

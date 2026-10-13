@@ -1,0 +1,35 @@
+{
+  "checkedAt": "2026-10-13T04:42:41.440Z",
+  "results": [
+    {
+      "route": "/",
+      "status": 200,
+      "html": true
+    },
+    {
+      "route": "/contact",
+      "status": 200,
+      "html": true
+    },
+    {
+      "route": "/catering",
+      "status": 200,
+      "html": true
+    },
+    {
+      "route": "/api/catering-inquiry",
+      "method": "GET",
+      "status": 405,
+      "body": {
+        "message": "Only POST requests are supported."
+      }
+    },
+    {
+      "route": "/api/catering-inquiry",
+      "method": "POST invalid email (no send)",
+      "status": 422,
+      "validationRejected": true
+    }
+  ],
+  "realEmailSent": false
+}

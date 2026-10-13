@@ -80,3 +80,12 @@ The mailto workflow has been replaced with same-origin POST to a Netlify functio
 Screenshots: catering-email-375-error.png, catering-email-375-accepted-mock.png, catering-email-768.png, catering-email-1440.png, catering-email-1920.png. Results: catering-email-results.json. Run node qa/catering-email-qa.mjs with isolated Chrome on port 9333 to repeat. The browser bundle was checked to exclude Resend API/environment references. The built API redirect precedes the SPA fallback. Netlify deployment/rate-limit processing and real mailbox delivery remain unverified until an approved deploy after DNS verification.
 
 See CATERING.md for changed files, Netlify Functions environment setup, rotated-key instructions, and the exact deployed-form test procedure. This supersedes earlier draft-only catering instructions. No deployment or real send was performed.
+
+
+## Production recipient update: October 13, 2026
+
+Catering notifications now use server-side CONTACT_EMAIL, defaulting to catering@takesushimichigan.com. Netlify CONTACT_EMAIL is set to that inbox for all contexts/scopes because the current plan rejects Functions-only scoping. Existing sender/API key settings were verified unchanged; no DNS changes. All 35 tests and the production build passed.
+
+Published production deployment: 6acdb67be965e12a756a7c93, https://takesushimichigan.com. Live routes returned 200, API GET returned 405 JSON, and an invalid-email inquiry returned 422 without sending an email. No real email or mailbox receipt was tested. This repository's /contact page has no inquiry form; only its catering handler uses Resend. Deployment metadata and live checks are in netlify-recipient-deployment.json and netlify-recipient-live-checks.json.
+
+Source files changed: netlify/functions/catering-inquiry.js, .env.example, netlify/tests/catering-inquiry.test.mjs, qa/catering-email-qa.mjs, and CATERING.md. This QA note and deployment helper/artifacts were added as verification records. Direct CLI deployment does not commit source; preserve the source change in Git before a later Git-based production deployment.

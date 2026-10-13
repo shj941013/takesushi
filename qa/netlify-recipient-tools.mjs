@@ -1,0 +1,61 @@
+import fs from 'node:fs';
+import path from 'node:path';
+import { pathToFileURL } from 'node:url';
+import { spawnSync } from 'node:child_process';
+const cache=path.join(process.env.LOCALAPPDATA,'npm-cache','_npx');
+const cli=fs.readdirSync(cache).map(hash=>path.join(cache,hash,'node_modules','netlify-cli','bin','run.js')).find(file=>fs.existsSync(file));
+if(!cli)throw new Error('Cached Netlify CLI is unavailable.');
+const args=process.argv.slice(2);
+const run=(commands)=>{const result=spawnSync(process.execPath,[cli,...commands],{encoding:'utf8',maxBuffer:8*1024*1024,env:process.env});if(result.stderr)console.log(result.stderr.replace(/\b(?:re_|nfp_)[A-Za-z0-9_-]+/g,'[redacted]'));if(result.status!==0)throw new Error('Netlify command failed with exit '+result.status);return result.stdout;};
+if(args[0]==='sites'){
+ const data=JSON.parse(run(['sites:list','--json']));
+ const sites=Array.isArray(data)?data:(data.sites||[]);
+ const matches=sites.filter(site=>site.custom_domain==='takesushimichigan.com'||site.custom_domain==='www.takesushimichigan.com');
+ const safe=matches.map(site=>({id:site.id,name:site.name,url:site.ssl_url||site.url,custom_domain:site.custom_domain,repository:site.build_settings?.repo_url,production_branch:site.build_settings?.repo_branch}));
+ console.log(JSON.stringify(safe,null,2));
+ if(safe.length===1)fs.writeFileSync('qa/netlify-target.json',JSON.stringify(safe[0],null,2)+'\n');
+ }else if(args[0]==='recipient'){
+ const target=JSON.parse(fs.readFileSync('qa/netlify-target.json','utf8'));
+ if(target.custom_domain!=='takesushimichigan.com'&&target.custom_domain!=='www.takesushimichigan.com')throw new Error('Unexpected deployment target');
+ const list=()=>JSON.parse(run(['env:list','--json','--scope','functions','--context','production','--site',target.id]));
+ const before=list();
+ const updateOutput=run(['env:set','CONTACT_EMAIL','catering@takesushimichigan.com','--scope','functions','--site',target.id]);
+ console.log(updateOutput);
+ if(!updateOutput.includes('Set environment variable'))throw new Error('Recipient update was not confirmed by CLI');
+ const after=list();
+ const withoutRecipient=value=>Object.fromEntries(Object.entries(value).filter(([key])=>key!=='CONTACT_EMAIL'));
+ if(JSON.stringify(withoutRecipient(before))!==JSON.stringify(withoutRecipient(after)))throw new Error('Unexpected environment changes; deployment stopped');
+ console.log(JSON.stringify({site:target.name,changedVariable:'CONTACT_EMAIL',value:after.CONTACT_EMAIL,otherFunctionVariablesUnchanged:true}));
+ }else if(args[0]==='api-recipient'){
+ const target=JSON.parse(fs.readFileSync('qa/netlify-target.json','utf8'));
+ const modules=path.resolve(path.dirname(cli),'../..');
+ const { getAPIToken }=await import(pathToFileURL(path.join(modules,'@netlify/dev-utils/dist/main.js')));
+ const { NetlifyAPI }=await import(pathToFileURL(path.join(modules,'@netlify/api/lib/index.js')));
+ const api=new NetlifyAPI(await getAPIToken());
+ const site=await api.getSite({site_id:target.id});
+ if(site.custom_domain!=='takesushimichigan.com')throw new Error('Unexpected site domain');
+ const params={accountId:site.account_slug,siteId:target.id};
+ const before=await api.getEnvVars(params);
+ const protectedValues=vars=>JSON.stringify(vars.filter(v=>['RESEND_API_KEY','CATERING_FROM_EMAIL'].includes(v.key)).map(v=>({key:v.key,scopes:[...v.scopes].sort(),values:v.values.map(x=>({context:x.context,parameter:x.context_parameter||'',value:x.value})).sort((a,b)=>JSON.stringify(a).localeCompare(JSON.stringify(b)))})).sort((a,b)=>a.key.localeCompare(b.key)));
+ const body={key:'CONTACT_EMAIL',scopes:['builds','functions','runtime','post_processing'],values:[{context:'all',value:'catering@takesushimichigan.com'}]};
+ if(before.some(v=>v.key==='CONTACT_EMAIL'))await api.updateEnvVar({...params,key:'CONTACT_EMAIL',body});
+ else await api.createEnvVars({...params,body:[body]});
+ const after=await api.getEnvVars(params);
+ const variable=after.find(v=>v.key==='CONTACT_EMAIL');
+ if(!variable?.values?.some(v=>v.context==='all'&&v.value==='catering@takesushimichigan.com'))throw new Error('Recipient setting not confirmed');
+ if(protectedValues(before)!==protectedValues(after))throw new Error('Unexpected sender/key change');
+ console.log(JSON.stringify({site:target.name,CONTACT_EMAIL:'catering@takesushimichigan.com',scopes:variable.scopes,context:'all',senderAndKeyUnchanged:true}));
+ }else if(args[0]==='verify'){
+ const target=JSON.parse(fs.readFileSync('qa/netlify-target.json','utf8'));
+ const values=JSON.parse(run(['env:list','--json','--scope','functions','--context','production','--site',target.id]));
+ const shape=value=>Array.isArray(value)?'array':typeof value;
+ console.log(JSON.stringify(Object.fromEntries(Object.entries(values).map(([key,value])=>[key,{type:shape(value),keys:value&&typeof value==='object'?Object.keys(value):[]}]))));
+ }else if(args[0]==='deploy'){
+ const target=JSON.parse(fs.readFileSync('qa/netlify-target.json','utf8'));
+ if(target.custom_domain!=='takesushimichigan.com'&&target.custom_domain!=='www.takesushimichigan.com')throw new Error('Unexpected deployment target');
+ const result=JSON.parse(run(['deploy','--prod','--no-build','--dir','build','--functions','netlify/functions','--site',target.id,'--skip-functions-cache','--message','Use CONTACT_EMAIL for inquiry notifications','--json']));
+ const safe={siteId:target.id,deployId:result.deploy_id,siteUrl:result.url,deployUrl:result.deploy_url,adminUrl:result.logs};
+ fs.writeFileSync('qa/netlify-recipient-deployment.json',JSON.stringify(safe,null,2)+'\n');
+ console.log(JSON.stringify(safe,null,2));
+ }else if(args[0]==='help')console.log(run(args.slice(1)));
+else throw new Error('Unsupported phase.');
