@@ -1,56 +1,26 @@
-import React, { useState } from "react";
-import { Menu } from "../../components";
-import "./SearchBar.css";
-
-const getFilteredItems = (query, items) => {
-    const filteredItems = {}
-    if (!query) {
-        return items;
-    }
-
-    Object.entries(items).map(item => {
-        const set = new Set();
-        Array.from(item[1]).map((food) => {
-            const { title } = food;
-
-            if(title.toLowerCase().includes(query.toLowerCase())) {
-                set.add(food);
-            }
-        })
-        if (set.size !== 0) {
-            filteredItems[item[0]] = set;
-        }
-    })
-
-    return filteredItems;
+import React, { useState } from 'react';
+import { Menu } from '../../components';
+export default function SearchBar({
+  placeholder,
+  items
+}) {
+  const [query, setQuery] = useState('');
+  const groups = Object.entries(items).map(([name, foods]) => [name, Array.from(foods).filter(food => food.title.toLowerCase().includes(query.toLowerCase()))]).filter(([, foods]) => foods.length);
+  return <div>
+    <div className="menu-search">
+      <label htmlFor="dish-search">Find a dish</label>
+      <div>
+        <input id="dish-search" type="search" value={query} placeholder={placeholder} onChange={e => setQuery(e.target.value)} />
+        {query && <button onClick={() => setQuery('')} aria-label="Clear dish search">Clear</button>}
+      </div>
+    </div>
+    <p className="search-status" role="status">{groups.reduce((count, [, foods]) => count + foods.length, 0)} dishes{query && ` matching "${query}"`}</p>
+    {groups.length ? groups.map(([name, foods]) => <section className="menu-group" key={name}>
+      <h2>{name}</h2>
+      <Menu items={foods} />
+    </section>) : <div className="empty-state">
+      <h2>No dishes found.</h2>
+      <p>Try another name, clear your search, or choose a different category.</p>
+    </div>}
+  </div>;
 }
-
-function SearchBar({placeholder, items }) {
-    const [query, setQuery] = useState("");
-    const filteredItems = getFilteredItems(query, items);
-
-    return (
-        <div>
-            <div className="search">
-                {/* <div className="searchInputs"> */}
-                    <input 
-                        type="text"
-                        placeholder={placeholder} 
-                        onChange={(e) => setQuery(e.target.value)} />
-                {/* </div> */}
-            </div>
-            <div>
-            { 
-            Object.entries(filteredItems).map(([key, value]) =>
-                <div key={key}>
-                    <p className='subCategory'> { key } </p>
-                        { <Menu items={ Array.from(value) } /> }
-                    <br />
-                </div>
-            )}
-            </div>
-        </div>
-    )
-}
-
-export default SearchBar;

@@ -1,46 +1,36 @@
-import React from 'react';
-import { GiHamburgerMenu } from 'react-icons/gi';
-import { MdOutlineRestaurantMenu } from 'react-icons/md';
-import images from '../../constants/images';
-import './Navbar.css';
-
-const Navbar = () => {
-  const [toggleMenu, setToggleMenu] = React.useState(false);
-  return (
-    <nav className="app__navbar">
-      <div className="app__navbar-logo">
-      <a href="/"><img src={images.takeSushiLogo} alt="app__logo" /></a>
-      </div>
-      <ul className="app__navbar-links">
-        <li className="p__opensans"><a href="/">Home</a></li>
-        <li className="p__opensans"><a href="/about">About</a></li>
-        <li className="p__opensans"><a href="/fullmenu">Menu</a></li>
-        <li className="p__opensans"><a href="/contact">Contact</a></li>
-      </ul>
-      {/* <div className="app__navbar-login">
-        <a href="#login" className="p__opensans">Log In / Registration</a>
-        <div />
-        <a href="/" className="p__opensans">Book Table</a>
-      </div> */}
-      <div className="app__navbar-login">
-        <a href="https://www.epipay.com/take/en/WebOrder?STORE_CODE=MTAwMA==&table_num=MTAwMA==" className="p__opensans">Order Now</a>
-      </div>
-      <div className="app__navbar-smallscreen">
-        <GiHamburgerMenu color="#fff" fontSize={27} onClick={() => setToggleMenu(true)} />
-        {toggleMenu && (
-          <div className="app__navbar-smallscreen_overlay flex__center slide-bottom">
-            <MdOutlineRestaurantMenu fontSize={27} className="overlay__close" onClick={() => setToggleMenu(false)} />
-            <ul className="app__navbar-smallscreen_links">
-              <li><a href="/" onClick={() => setToggleMenu(false)}>Home</a></li>
-              <li><a href="/about" onClick={() => setToggleMenu(false)}>About</a></li>
-              <li><a href="/fullmenu" onClick={() => setToggleMenu(false)}>Menu</a></li>
-              <li><a href="/contact" onClick={() => setToggleMenu(false)}>Contact</a></li>
-            </ul>
-          </div>
-        )}
-      </div>
-    </nav>
-  );
-};
-
-export default Navbar;
+import React, { useEffect, useRef, useState } from 'react';
+import { NavLink, useLocation } from 'react-router-dom';
+import { FiMenu, FiX, FiArrowUpRight } from 'react-icons/fi';
+import { ORDER_URL } from '../../constants/restaurant';
+import Brand from '../Brand';
+const links = [['/', 'Home'], ['/about', 'Our story'], ['/fullmenu', 'Menu'], ['/catering', 'Catering'], ['/contact', 'Visit us']];
+export default function Navbar() {
+  const [open, setOpen] = useState(false);
+  const location = useLocation();
+  const toggle = useRef(null);
+  useEffect(() => {
+    setOpen(false);
+  }, [location.pathname]);
+  useEffect(() => {
+    const close = e => {
+      if (open && e.key === 'Escape') {
+        setOpen(false);
+        toggle.current?.focus();
+      }
+    };
+    document.addEventListener('keydown', close);
+    return () => document.removeEventListener('keydown', close);
+  }, [open]);
+  return <header className="site-header">
+    <div className="nav-inner">
+      <Brand />
+      <nav className="desktop-nav" aria-label="Main navigation">{links.map(([to, name]) => <NavLink key={to} to={to} end={to === '/'}>{name}</NavLink>)}</nav>
+      <a className="button nav-order" href={ORDER_URL}>Order online <FiArrowUpRight /></a>
+      <button ref={toggle} className="nav-toggle" aria-label={open ? 'Close navigation' : 'Open navigation'} aria-expanded={open} aria-controls="mobile-navigation" onClick={() => setOpen(!open)}>{open ? <FiX /> : <FiMenu />}</button>
+    </div>
+    {open && <nav id="mobile-navigation" className="mobile-nav" aria-label="Mobile navigation">
+      {links.map(([to, name]) => <NavLink key={to} to={to} end={to === '/'} onClick={() => setOpen(false)}>{name}</NavLink>)}
+      <a href={ORDER_URL}>Order online ↗</a>
+    </nav>}
+  </header>;
+}

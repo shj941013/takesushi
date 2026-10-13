@@ -21,3 +21,12 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# Local browser QA profile (generated browser state)
+/qa/chrome-profile/
+
+# Secrets and local Netlify state
+.env
+.env.*
+!.env.example
+/.netlify/

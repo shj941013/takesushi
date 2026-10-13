@@ -1,0 +1,254 @@
+{
+  "rows": [
+    {
+      "route": "/",
+      "width": 375,
+      "scrollWidth": 360,
+      "height": 7670,
+      "overflow": [],
+      "sections": [
+        {
+          "class": "hero",
+          "height": 714,
+          "opacity": "1"
+        },
+        {
+          "class": "section intro",
+          "height": 822,
+          "opacity": "1"
+        },
+        {
+          "class": "section catering-promo",
+          "height": 639,
+          "opacity": "1"
+        },
+        {
+          "class": "section featured",
+          "height": 1760,
+          "opacity": "1"
+        },
+        {
+          "class": "section menu-preview",
+          "height": 643,
+          "opacity": "1"
+        },
+        {
+          "class": "gallery-section",
+          "height": 1072,
+          "opacity": "1"
+        },
+        {
+          "class": "order-section",
+          "height": 424,
+          "opacity": "1"
+        },
+        {
+          "class": "visit-preview section",
+          "height": 722,
+          "opacity": "1"
+        }
+      ],
+      "brokenImages": [],
+      "literalEntities": [],
+      "consoleErrors": []
+    },
+    {
+      "route": "/",
+      "width": 768,
+      "scrollWidth": 753,
+      "height": 8840,
+      "overflow": [],
+      "sections": [
+        {
+          "class": "hero",
+          "height": 1030,
+          "opacity": "1"
+        },
+        {
+          "class": "section intro",
+          "height": 1048,
+          "opacity": "1"
+        },
+        {
+          "class": "section catering-promo",
+          "height": 896,
+          "opacity": "1"
+        },
+        {
+          "class": "section featured",
+          "height": 1855,
+          "opacity": "1"
+        },
+        {
+          "class": "section menu-preview",
+          "height": 643,
+          "opacity": "1"
+        },
+        {
+          "class": "gallery-section",
+          "height": 1524,
+          "opacity": "1"
+        },
+        {
+          "class": "order-section",
+          "height": 355,
+          "opacity": "1"
+        },
+        {
+          "class": "visit-preview section",
+          "height": 722,
+          "opacity": "1"
+        }
+      ],
+      "brokenImages": [],
+      "literalEntities": [],
+      "consoleErrors": []
+    },
+    {
+      "route": "/",
+      "width": 1440,
+      "scrollWidth": 1425,
+      "height": 6422,
+      "overflow": [],
+      "sections": [
+        {
+          "class": "hero",
+          "height": 750,
+          "opacity": "1"
+        },
+        {
+          "class": "section intro",
+          "height": 683,
+          "opacity": "1"
+        },
+        {
+          "class": "section catering-promo",
+          "height": 594,
+          "opacity": "1"
+        },
+        {
+          "class": "section featured",
+          "height": 1460,
+          "opacity": "1"
+        },
+        {
+          "class": "section menu-preview",
+          "height": 526,
+          "opacity": "1"
+        },
+        {
+          "class": "gallery-section",
+          "height": 963,
+          "opacity": "1"
+        },
+        {
+          "class": "order-section",
+          "height": 449,
+          "opacity": "1"
+        },
+        {
+          "class": "visit-preview section",
+          "height": 483,
+          "opacity": "1"
+        }
+      ],
+      "brokenImages": [],
+      "literalEntities": [],
+      "consoleErrors": []
+    },
+    {
+      "route": "/",
+      "width": 1920,
+      "scrollWidth": 1905,
+      "height": 6414,
+      "overflow": [],
+      "sections": [
+        {
+          "class": "hero",
+          "height": 750,
+          "opacity": "1"
+        },
+        {
+          "class": "section intro",
+          "height": 680,
+          "opacity": "1"
+        },
+        {
+          "class": "section catering-promo",
+          "height": 591,
+          "opacity": "1"
+        },
+        {
+          "class": "section featured",
+          "height": 1460,
+          "opacity": "1"
+        },
+        {
+          "class": "section menu-preview",
+          "height": 526,
+          "opacity": "1"
+        },
+        {
+          "class": "gallery-section",
+          "height": 960,
+          "opacity": "1"
+        },
+        {
+          "class": "order-section",
+          "height": 449,
+          "opacity": "1"
+        },
+        {
+          "class": "visit-preview section",
+          "height": 483,
+          "opacity": "1"
+        }
+      ],
+      "brokenImages": [],
+      "literalEntities": [],
+      "consoleErrors": []
+    }
+  ],
+  "reduced": [
+    {
+      "class": "hero",
+      "opacity": "1",
+      "animation": "none"
+    },
+    {
+      "class": "section intro",
+      "opacity": "1",
+      "animation": "none"
+    },
+    {
+      "class": "section catering-promo",
+      "opacity": "1",
+      "animation": "none"
+    },
+    {
+      "class": "section featured",
+      "opacity": "1",
+      "animation": "none"
+    },
+    {
+      "class": "section menu-preview",
+      "opacity": "1",
+      "animation": "none"
+    },
+    {
+      "class": "gallery-section",
+      "opacity": "1",
+      "animation": "none"
+    },
+    {
+      "class": "order-section",
+      "opacity": "1",
+      "animation": "none"
+    },
+    {
+      "class": "visit-preview section",
+      "opacity": "1",
+      "animation": "none"
+    }
+  ]
+}

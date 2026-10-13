@@ -1,0 +1,673 @@
+{
+  "rows": [
+    {
+      "route": "/",
+      "width": 375,
+      "scrollWidth": 360,
+      "height": 7104,
+      "overflow": [],
+      "sections": [
+        {
+          "class": "hero",
+          "height": 793,
+          "opacity": "1"
+        },
+        {
+          "class": "section intro",
+          "height": 842,
+          "opacity": "1"
+        },
+        {
+          "class": "section featured",
+          "height": 1760,
+          "opacity": "1"
+        },
+        {
+          "class": "section menu-preview",
+          "height": 643,
+          "opacity": "1"
+        },
+        {
+          "class": "gallery-section",
+          "height": 983,
+          "opacity": "1"
+        },
+        {
+          "class": "order-section",
+          "height": 424,
+          "opacity": "1"
+        },
+        {
+          "class": "visit-preview section",
+          "height": 722,
+          "opacity": "1"
+        }
+      ],
+      "brokenImages": [],
+      "literalEntities": [],
+      "consoleErrors": []
+    },
+    {
+      "route": "/about",
+      "width": 375,
+      "scrollWidth": 360,
+      "height": 1991,
+      "overflow": [],
+      "sections": [
+        {
+          "class": "section about-page",
+          "height": 1117,
+          "opacity": "1"
+        }
+      ],
+      "brokenImages": [],
+      "literalEntities": [],
+      "consoleErrors": []
+    },
+    {
+      "route": "/fullmenu",
+      "width": 375,
+      "scrollWidth": 360,
+      "height": 9283,
+      "overflow": [],
+      "sections": [
+        {
+          "class": "menu-page section",
+          "height": 8408,
+          "opacity": "1"
+        },
+        {
+          "class": "menu-group",
+          "height": 292,
+          "opacity": "1"
+        },
+        {
+          "class": "menu-group",
+          "height": 1096,
+          "opacity": "1"
+        },
+        {
+          "class": "menu-group",
+          "height": 315,
+          "opacity": "1"
+        },
+        {
+          "class": "menu-group",
+          "height": 449,
+          "opacity": "1"
+        },
+        {
+          "class": "menu-group",
+          "height": 741,
+          "opacity": "1"
+        },
+        {
+          "class": "menu-group",
+          "height": 292,
+          "opacity": "1"
+        },
+        {
+          "class": "menu-group",
+          "height": 338,
+          "opacity": "1"
+        },
+        {
+          "class": "menu-group",
+          "height": 449,
+          "opacity": "1"
+        },
+        {
+          "class": "menu-group",
+          "height": 695,
+          "opacity": "1"
+        },
+        {
+          "class": "menu-group",
+          "height": 449,
+          "opacity": "1"
+        },
+        {
+          "class": "menu-group",
+          "height": 513,
+          "opacity": "1"
+        },
+        {
+          "class": "menu-group",
+          "height": 1339,
+          "opacity": "1"
+        }
+      ],
+      "brokenImages": [],
+      "literalEntities": [],
+      "consoleErrors": []
+    },
+    {
+      "route": "/contact",
+      "width": 375,
+      "scrollWidth": 360,
+      "height": 2083,
+      "overflow": [],
+      "sections": [
+        {
+          "class": "section contact-page",
+          "height": 1209,
+          "opacity": "1"
+        }
+      ],
+      "brokenImages": [],
+      "literalEntities": [],
+      "consoleErrors": []
+    },
+    {
+      "route": "/",
+      "width": 768,
+      "scrollWidth": 753,
+      "height": 7638,
+      "overflow": [],
+      "sections": [
+        {
+          "class": "hero",
+          "height": 1119,
+          "opacity": "1"
+        },
+        {
+          "class": "section intro",
+          "height": 1068,
+          "opacity": "1"
+        },
+        {
+          "class": "section featured",
+          "height": 1855,
+          "opacity": "1"
+        },
+        {
+          "class": "section menu-preview",
+          "height": 643,
+          "opacity": "1"
+        },
+        {
+          "class": "gallery-section",
+          "height": 1046,
+          "opacity": "1"
+        },
+        {
+          "class": "order-section",
+          "height": 355,
+          "opacity": "1"
+        },
+        {
+          "class": "visit-preview section",
+          "height": 722,
+          "opacity": "1"
+        }
+      ],
+      "brokenImages": [],
+      "literalEntities": [],
+      "consoleErrors": []
+    },
+    {
+      "route": "/about",
+      "width": 768,
+      "scrollWidth": 753,
+      "height": 1860,
+      "overflow": [],
+      "sections": [
+        {
+          "class": "section about-page",
+          "height": 1118,
+          "opacity": "1"
+        }
+      ],
+      "brokenImages": [],
+      "literalEntities": [],
+      "consoleErrors": []
+    },
+    {
+      "route": "/fullmenu",
+      "width": 768,
+      "scrollWidth": 753,
+      "height": 8461,
+      "overflow": [],
+      "sections": [
+        {
+          "class": "menu-page section",
+          "height": 7719,
+          "opacity": "1"
+        },
+        {
+          "class": "menu-group",
+          "height": 294,
+          "opacity": "1"
+        },
+        {
+          "class": "menu-group",
+          "height": 1082,
+          "opacity": "1"
+        },
+        {
+          "class": "menu-group",
+          "height": 294,
+          "opacity": "1"
+        },
+        {
+          "class": "menu-group",
+          "height": 407,
+          "opacity": "1"
+        },
+        {
+          "class": "menu-group",
+          "height": 632,
+          "opacity": "1"
+        },
+        {
+          "class": "menu-group",
+          "height": 294,
+          "opacity": "1"
+        },
+        {
+          "class": "menu-group",
+          "height": 294,
+          "opacity": "1"
+        },
+        {
+          "class": "menu-group",
+          "height": 407,
+          "opacity": "1"
+        },
+        {
+          "class": "menu-group",
+          "height": 632,
+          "opacity": "1"
+        },
+        {
+          "class": "menu-group",
+          "height": 407,
+          "opacity": "1"
+        },
+        {
+          "class": "menu-group",
+          "height": 452,
+          "opacity": "1"
+        },
+        {
+          "class": "menu-group",
+          "height": 1194,
+          "opacity": "1"
+        }
+      ],
+      "brokenImages": [],
+      "literalEntities": [],
+      "consoleErrors": []
+    },
+    {
+      "route": "/contact",
+      "width": 768,
+      "scrollWidth": 753,
+      "height": 1928,
+      "overflow": [],
+      "sections": [
+        {
+          "class": "section contact-page",
+          "height": 1186,
+          "opacity": "1"
+        }
+      ],
+      "brokenImages": [],
+      "literalEntities": [],
+      "consoleErrors": []
+    },
+    {
+      "route": "/",
+      "width": 1440,
+      "scrollWidth": 1425,
+      "height": 6084,
+      "overflow": [],
+      "sections": [
+        {
+          "class": "hero",
+          "height": 738,
+          "opacity": "1"
+        },
+        {
+          "class": "section intro",
+          "height": 715,
+          "opacity": "1"
+        },
+        {
+          "class": "section featured",
+          "height": 1460,
+          "opacity": "1"
+        },
+        {
+          "class": "section menu-preview",
+          "height": 526,
+          "opacity": "1"
+        },
+        {
+          "class": "gallery-section",
+          "height": 1109,
+          "opacity": "1"
+        },
+        {
+          "class": "order-section",
+          "height": 449,
+          "opacity": "1"
+        },
+        {
+          "class": "visit-preview section",
+          "height": 483,
+          "opacity": "1"
+        }
+      ],
+      "brokenImages": [],
+      "literalEntities": [],
+      "consoleErrors": []
+    },
+    {
+      "route": "/about",
+      "width": 1440,
+      "scrollWidth": 1425,
+      "height": 1289,
+      "overflow": [],
+      "sections": [
+        {
+          "class": "section about-page",
+          "height": 775,
+          "opacity": "1"
+        }
+      ],
+      "brokenImages": [],
+      "literalEntities": [],
+      "consoleErrors": []
+    },
+    {
+      "route": "/fullmenu",
+      "width": 1440,
+      "scrollWidth": 1425,
+      "height": 6112,
+      "overflow": [],
+      "sections": [
+        {
+          "class": "menu-page section",
+          "height": 5598,
+          "opacity": "1"
+        },
+        {
+          "class": "menu-group",
+          "height": 182,
+          "opacity": "1"
+        },
+        {
+          "class": "menu-group",
+          "height": 632,
+          "opacity": "1"
+        },
+        {
+          "class": "menu-group",
+          "height": 182,
+          "opacity": "1"
+        },
+        {
+          "class": "menu-group",
+          "height": 294,
+          "opacity": "1"
+        },
+        {
+          "class": "menu-group",
+          "height": 430,
+          "opacity": "1"
+        },
+        {
+          "class": "menu-group",
+          "height": 182,
+          "opacity": "1"
+        },
+        {
+          "class": "menu-group",
+          "height": 182,
+          "opacity": "1"
+        },
+        {
+          "class": "menu-group",
+          "height": 317,
+          "opacity": "1"
+        },
+        {
+          "class": "menu-group",
+          "height": 407,
+          "opacity": "1"
+        },
+        {
+          "class": "menu-group",
+          "height": 294,
+          "opacity": "1"
+        },
+        {
+          "class": "menu-group",
+          "height": 452,
+          "opacity": "1"
+        },
+        {
+          "class": "menu-group",
+          "height": 632,
+          "opacity": "1"
+        }
+      ],
+      "brokenImages": [],
+      "literalEntities": [],
+      "consoleErrors": []
+    },
+    {
+      "route": "/contact",
+      "width": 1440,
+      "scrollWidth": 1425,
+      "height": 1413,
+      "overflow": [],
+      "sections": [
+        {
+          "class": "section contact-page",
+          "height": 899,
+          "opacity": "1"
+        }
+      ],
+      "brokenImages": [],
+      "literalEntities": [],
+      "consoleErrors": []
+    },
+    {
+      "route": "/",
+      "width": 1920,
+      "scrollWidth": 1905,
+      "height": 6146,
+      "overflow": [],
+      "sections": [
+        {
+          "class": "hero",
+          "height": 738,
+          "opacity": "1"
+        },
+        {
+          "class": "section intro",
+          "height": 712,
+          "opacity": "1"
+        },
+        {
+          "class": "section featured",
+          "height": 1460,
+          "opacity": "1"
+        },
+        {
+          "class": "section menu-preview",
+          "height": 526,
+          "opacity": "1"
+        },
+        {
+          "class": "gallery-section",
+          "height": 1174,
+          "opacity": "1"
+        },
+        {
+          "class": "order-section",
+          "height": 449,
+          "opacity": "1"
+        },
+        {
+          "class": "visit-preview section",
+          "height": 483,
+          "opacity": "1"
+        }
+      ],
+      "brokenImages": [],
+      "literalEntities": [],
+      "consoleErrors": []
+    },
+    {
+      "route": "/about",
+      "width": 1920,
+      "scrollWidth": 1905,
+      "height": 1287,
+      "overflow": [],
+      "sections": [
+        {
+          "class": "section about-page",
+          "height": 773,
+          "opacity": "1"
+        }
+      ],
+      "brokenImages": [],
+      "literalEntities": [],
+      "consoleErrors": []
+    },
+    {
+      "route": "/fullmenu",
+      "width": 1920,
+      "scrollWidth": 1905,
+      "height": 6112,
+      "overflow": [],
+      "sections": [
+        {
+          "class": "menu-page section",
+          "height": 5598,
+          "opacity": "1"
+        },
+        {
+          "class": "menu-group",
+          "height": 182,
+          "opacity": "1"
+        },
+        {
+          "class": "menu-group",
+          "height": 632,
+          "opacity": "1"
+        },
+        {
+          "class": "menu-group",
+          "height": 182,
+          "opacity": "1"
+        },
+        {
+          "class": "menu-group",
+          "height": 294,
+          "opacity": "1"
+        },
+        {
+          "class": "menu-group",
+          "height": 430,
+          "opacity": "1"
+        },
+        {
+          "class": "menu-group",
+          "height": 182,
+          "opacity": "1"
+        },
+        {
+          "class": "menu-group",
+          "height": 182,
+          "opacity": "1"
+        },
+        {
+          "class": "menu-group",
+          "height": 317,
+          "opacity": "1"
+        },
+        {
+          "class": "menu-group",
+          "height": 407,
+          "opacity": "1"
+        },
+        {
+          "class": "menu-group",
+          "height": 294,
+          "opacity": "1"
+        },
+        {
+          "class": "menu-group",
+          "height": 452,
+          "opacity": "1"
+        },
+        {
+          "class": "menu-group",
+          "height": 632,
+          "opacity": "1"
+        }
+      ],
+      "brokenImages": [],
+      "literalEntities": [],
+      "consoleErrors": []
+    },
+    {
+      "route": "/contact",
+      "width": 1920,
+      "scrollWidth": 1905,
+      "height": 1413,
+      "overflow": [],
+      "sections": [
+        {
+          "class": "section contact-page",
+          "height": 899,
+          "opacity": "1"
+        }
+      ],
+      "brokenImages": [],
+      "literalEntities": [],
+      "consoleErrors": []
+    }
+  ],
+  "reduced": [
+    {
+      "class": "hero",
+      "opacity": "1",
+      "animation": "none"
+    },
+    {
+      "class": "section intro",
+      "opacity": "1",
+      "animation": "none"
+    },
+    {
+      "class": "section featured",
+      "opacity": "1",
+      "animation": "none"
+    },
+    {
+      "class": "section menu-preview",
+      "opacity": "1",
+      "animation": "none"
+    },
+    {
+      "class": "gallery-section",
+      "opacity": "1",
+      "animation": "none"
+    },
+    {
+      "class": "order-section",
+      "opacity": "1",
+      "animation": "none"
+    },
+    {
+      "class": "visit-preview section",
+      "opacity": "1",
+      "animation": "none"
+    }
+  ]
+}

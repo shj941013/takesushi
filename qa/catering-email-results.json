@@ -1,0 +1,20 @@
+{
+  "provider": "MOCK: no real email sent",
+  "checks": [
+    "validation",
+    "busy/duplicate guard",
+    "server rejection preserves fields",
+    "retry acceptance",
+    "same idempotency key",
+    "no mailto flow",
+    "responsive layout"
+  ],
+  "widths": [
+    375,
+    768,
+    1440,
+    1920
+  ],
+  "providerCalls": 2,
+  "unexpectedConsoleErrors": []
+}

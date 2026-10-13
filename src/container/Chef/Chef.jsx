@@ -1,35 +1,19 @@
 import React from 'react';
-
-import { SubHeading } from '../../components';
+import { Link } from 'react-router-dom';
 import { images } from '../../constants';
-import './Chef.css';
-
-const Chef = () => (
-  <div className="app__bg app__wrapper section__padding">
-    <div className="app__wrapper_img app__wrapper_img-reverse">
-      <img src={images.coverphoto3} alt="chef_image" />
+export default function Chef() {
+  return <section className="section intro" id="welcome">
+    <div className="intro-photo">
+      <img src={images.assortment} alt="An assortment of Take Sushi rolls and nigiri" loading="lazy" />
+      <span className="image-caption">A TASTE OF TAKE SUSHI</span>
     </div>
-    <div className="app__wrapper_info">
-      <SubHeading title="Chef's word" />
-      <h1 className="headtext__cormorant">What we believe in</h1>
-
-      <div className="app__chef-content">
-        <div className="app__chef-content_quote">
-          <img src={images.quote} alt="quote_image" />
-          <p className="p__opensans">Our aim at TAKE SUSHI </p>
-        </div>
-        <p className="p__opensans">is to provide our clients with the BEST SUSHI in town while also ensuring that they have the best possible experience while dining with us.</p>
-      </div>
-
-      <div className="app__chef-sign">
-        <p>Song & Yong</p>
-        <p className="p__opensans" style={{margin: 0}}>Founders</p>
-        <img src={images.sign} alt="sign_image" style={{margin: 0}} />
-      </div>
-
-      <button type="button" className="custom__button"><a href="/about">Meet the team</a></button>
+    <div>
+      <p className="eyebrow">02 / THE EXPERIENCE</p>
+      <h2>A tradition of flavor.<br /><em>An experience to savor.</em></h2>
+      <p>Since 1995, Take Sushi has been privileged to serve the Rochester Hills community. Our aim is to give every guest a wonderful experience, from the sushi bar to the table.</p>
+      <p>Meet Chef Song and Manager Yong, the people behind our food and hospitality.</p>
+      <Link className="text-link" to="/about">Our story <span>✳</span></Link>
+      <div className="signature">Song &amp; Yong <small>FOUNDERS</small></div>
     </div>
-  </div>
-);
-
-export default Chef;
+  </section>;
+}

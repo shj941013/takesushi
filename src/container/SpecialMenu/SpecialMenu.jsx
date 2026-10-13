@@ -1,44 +1,27 @@
 import React from 'react';
-
-import { SubHeading, SpecialMenuItem } from '../../components';
+import { Link } from 'react-router-dom';
 import { data, images } from '../../constants';
-import './SpecialMenu.css';
-
-const SpecialMenu = () => (
-  <div className="app__specialMenu flex__center section__padding" id="menu">
-    <div className="app__specialMenu-title">
-      <SubHeading title="Menu that fits your palatte" />
-      <h1 className="headtext__cormorant">Our Most Popular</h1>
+export default function SpecialMenu() {
+  return <section className="section featured" id="menu">
+    <div className="section-heading">
+      <p className="eyebrow">03 / SIGNATURE SELECTIONS</p>
+      <h2>Made to be savored.</h2>
+      <p>Explore a few of the dishes on our menu.</p>
     </div>
-
-    <div className="app__specialMenu-menu">
-      <div className="app__specialMenu-menu_wine  flex__center">
-        <p className="app__specialMenu-menu_heading">From Sushi Bar</p>
-        <div className="app__specialMenu_menu_items">
-          {data.specialRolls.map((specialRoll, index) => (
-            <SpecialMenuItem key={specialRoll.title + index} title={specialRoll.title} price={specialRoll.price} tags={specialRoll.description} />
-          ))}
-        </div>
-      </div>
-
-      <div className="app__specialMenu-menu_img">
-        <img src={images.menu} alt="menu__img" />
-      </div>
-
-      <div className="app__specialMenu-menu_cocktails  flex__center">
-        <p className="app__specialMenu-menu_heading">From Kitchen</p>
-        <div className="app__specialMenu_menu_items">
-          {data.specials.map((specials, index) => (
-            <SpecialMenuItem key={specials.title + index} title={specials.title} price={specials.price} tags={specials.description} />
-          ))}
-        </div>
-      </div>
-    </div>
-
-    <div style={{ marginTop: 15 }}>
-      <button type="button" className="custom__button"><a href="/fullmenu">View Our Menu</a></button>
-    </div>
-  </div>
-);
-
-export default SpecialMenu;
+    <figure className="selection-photo">
+      <img src={images.assortment} alt="Take Sushi sushi and nigiri platter" loading="lazy" />
+      <figcaption>THE SUSHI BAR / TAKE SUSHI</figcaption>
+    </figure>
+    <div className="featured-columns">{[['From the sushi bar', data.specialRolls], ['From the kitchen', data.specials]].map(([title, dishes]) => <div key={title}>
+        <h3>{title}</h3>
+        {dishes.map(dish => <article className="featured-item" key={dish.id}>
+          <div>
+            <h4>{dish.title}</h4>
+            <span>${dish.price}</span>
+          </div>
+          <p>{dish.description}</p>
+        </article>)}
+      </div>)}</div>
+    <Link className="button button-outline" to="/fullmenu">Explore the full menu ↗</Link>
+  </section>;
+}

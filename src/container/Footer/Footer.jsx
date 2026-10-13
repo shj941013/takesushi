@@ -1,50 +1,53 @@
 import React from 'react';
-import { FiFacebook, FiTwitter, FiInstagram } from 'react-icons/fi';
-
-import { FooterOverlay, Newsletter } from '../../components';
-import { images } from '../../constants';
-import './Footer.css';
-
-const Footer = () => (
-  <div className="app__footer section__padding" id="login">
-    <div className="app__footer-links">
-      <div className="app__footer-links_contact">
-        <h1 className="app__footer-headtext">Contact Us</h1>
-        <p className="p__opensans">1366 Walton Blvd, Rochester Hills, MI 48309</p>
-        <p className="p__opensans">+1 (248) 652-7800</p>
-        <p className="p__opensans">+1 (248) 652-4601</p>
-        <p className="p__opensans">Located in the Rochester Hills Plaza</p>
-      </div>
-
-      <div className="app__footer-links_logo">
-        <img src={images.takeSushiLogo} alt="footer_logo" />
-        <p className="p__opensans">&quot;The best way to find yourself is to lose yourself in the service of others.&quot;</p>
-        <img src={images.spoon} className="spoon__img" style={{ marginTop: 15 }} />
-        <div className="app__footer-links_icons">
-        <a href='https://www.facebook.com/profile.php?id=100067170430552'><FiFacebook /></a>
-          {/* <FiTwitter /> */}
-          <a href='https://www.instagram.com/takesushi_mi/'><FiInstagram /></a>
+import Brand from '../../components/Brand';
+import { Link } from 'react-router-dom';
+import { FiInstagram, FiFacebook } from 'react-icons/fi';
+import { hours, INSTAGRAM_URL, FACEBOOK_URL, ORDER_URL } from '../../constants/restaurant';
+export function Hours() {
+  return <dl className="hours">{hours.map(([day, time]) => <div key={day}>
+      <dt>{day}</dt>
+      <dd>{time}</dd>
+    </div>)}</dl>;
+}
+export default function Footer() {
+  return <footer className="site-footer">
+    <div className="footer-grid">
+      <div>
+        <Brand footer />
+        <p>Japanese cuisine.<br />Rochester Hills, Michigan.</p>
+        <div className="socials">
+          <a aria-label="Take Sushi on Instagram" href={INSTAGRAM_URL}>
+            <FiInstagram />
+          </a>
+          <a aria-label="Take Sushi on Facebook" href={FACEBOOK_URL}>
+            <FiFacebook />
+          </a>
         </div>
       </div>
-
-      <div className="app__footer-links_work">
-        <h1 className="app__footer-headtext">Working Hours</h1>
-        <p className="p__opensans">Monday:</p>
-        <p className="p__opensans">Closed</p>        
-        <p className="p__opensans">Tuesday - Friday:</p>
-        <p className="p__opensans">11:00 A.M. - 8:30 P.M.</p>
-        <p className="p__opensans">Saturday</p>
-        <p className="p__opensans">12:00 P.M. - 8:30 P.M.</p>
-        <p className="p__opensans">Sunday</p>
-        <p className="p__opensans">4:00 P.M - 8:30 P.M.</p>
+      <div>
+        <h3>Visit us</h3>
+        <address>1366 Walton Blvd<br />Rochester Hills, MI 48309<br /><span>Rochester Hills Plaza</span></address>
+        <a href="tel:+12486527800">+1 (248) 652-7800</a>
+        <br />
+        <a href="tel:+12486524601">+1 (248) 652-4601</a>
       </div>
+      <div>
+        <h3>Opening hours</h3>
+        <Hours />
+      </div>
+      <nav aria-label="Footer navigation">
+        <h3>Explore</h3>
+        <Link to="/">Home</Link>
+        <Link to="/about">Our story</Link>
+        <Link to="/fullmenu">Menu</Link>
+        <Link to="/catering">Catering</Link>
+        <Link to="/contact">Contact</Link>
+        <a href={ORDER_URL}>Order online ↗</a>
+      </nav>
     </div>
-
-    <div className="footer__copyright">
-      <p className="p__opensans">2023 Take Sushi. All Rights reserved.</p>
+    <div className="footer-bottom">
+      <span>© {new Date().getFullYear()} Take Sushi. All rights reserved.</span>
+      <span>THE ART OF JAPANESE CUISINE</span>
     </div>
-
-  </div>
-);
-
-export default Footer;
+  </footer>;
+}

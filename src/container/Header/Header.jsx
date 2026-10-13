@@ -1,24 +1,34 @@
 import React from 'react';
-
-import { SubHeading } from '../../components';
+import { Link } from 'react-router-dom';
+import { FiArrowRight, FiArrowUpRight, FiArrowDown } from 'react-icons/fi';
 import { images } from '../../constants';
-import './Header.css';
-
-const Header = () => (
-  <div className="app__header app__wrapper section__padding" id="home">
-    <div className="app__wrapper_info">
-      <SubHeading title="Taste of Japan" />
-      <h1 className="app__header-h1">The Art of Japanese Cuisine</h1>
-      <p className="p__opensans" style={{ margin: '2rem 0', fontFamily: 'cursive', fontSize: '20px' }}>Enjoy the experience</p>
-      <div>
-        <button type="button" className="custom__button"><a href="https://www.epipay.com/take/en/WebOrder?STORE_CODE=MTAwMA==&table_num=MTAwMA==">Order Now</a></button>
+import { ORDER_URL } from '../../constants/restaurant';
+export default function Header() {
+  return <section className="hero" id="home">
+    <div className="hero-content">
+      <p className="eyebrow">TAKE SUSHI &mdash; ROCHESTER HILLS</p>
+      <h1>
+        <span>A Taste of Japan.</span>
+        <em>Right Here at Home.</em>
+      </h1>
+      <div className="hero-description">
+        <p>Authentic Japanese favorites, prepared with care.</p>
+      </div>
+      <div className="actions">
+        <a className="button" href={ORDER_URL}>ORDER ONLINE <FiArrowUpRight /></a>
+        <Link className="text-link" to="/fullmenu">EXPLORE THE MENU <FiArrowRight /></Link>
       </div>
     </div>
-
-    <div className="app__wrapper_img">
-      <img src={images.header} alt="header_img" />
-    </div>
-  </div>
-);
-
-export default Header;
+    <figure className="hero-art">
+      <img className="hero-image" src={images.assortment2} alt="Take Sushi's assortment of sushi and sashimi" fetchpriority="high" />
+      <figcaption>
+        <span>FROM THE TAKE SUSHI BAR</span>
+        <span>EST. 1995</span>
+      </figcaption>
+    </figure>
+    <footer className="hero-bottom">
+      <span>JAPANESE CUISINE / ROCHESTER HILLS, MI</span>
+      <a href="#welcome">SCROLL TO DISCOVER <FiArrowDown /></a>
+    </footer>
+  </section>;
+}

@@ -1,0 +1,18 @@
+{
+  "checks": [
+    "mobile navigation",
+    "quote anchor",
+    "required field validation and focus",
+    "conditional delivery location",
+    "email recipient and payload",
+    "no fake sent state",
+    "duplicate prevention"
+  ],
+  "href": "mailto:hjsong240@gmail.com?subject=Take%20Sushi%20catering%20inquiry%20-%202099-11-05&body=CATERING%20INQUIRY%20-%20subject%20to%20restaurant%20approval%0A%0AName%3A%20QA%20Test%20Guest%0AEmail%3A%20qa%40example.com%0APhone%3A%202485550100%0AEvent%20date%3A%202099-11-05%0AEstimated%20guests%3A%2025%0AEvent%20type%3A%20Private%20parties%0APreference%3A%20Delivery%0ARequested%20delivery%20location%3A%20QA%20Test%20Address%0ASelections%20of%20interest%3A%20Classic%20sushi%20rolls%0ABudget%3A%20Not%20specified%0AAdditional%20requests%3A%20None%0A%0APlease%20contact%20me%20to%20discuss%20availability%20and%20a%20quote.%20This%20is%20an%20inquiry%2C%20not%20a%20confirmed%20order.",
+  "status": "Your email draft is ready. Open it in your email app and send it to request a quote. Nothing has been sent by this website.",
+  "disabled": true,
+  "count": 1,
+  "title": "Take Sushi | Sushi Catering in Rochester Hills",
+  "description": "Plan sushi catering in Rochester Hills with Take Sushi. Explore Japanese catering ideas, sushi platters, and corporate event inquiries. Call or prepare an email quote request.",
+  "consoleErrors": []
+}

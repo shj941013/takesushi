@@ -45,4 +45,5 @@ const specials = [
     }
 ]
 
-export default { specialRolls, specials};
+const data = { specialRolls, specials };
+export default data;

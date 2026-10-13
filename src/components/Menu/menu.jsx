@@ -1,55 +1,27 @@
-import React from "react";
-import images from "../../constants/images"
-
-const Menu = ({ items }) => {
-  return (
-    <div className="section-center">
-      {items.map((item) => {
-        const { id, title, img, desc, price, pdf } = item;
-        if (img !== null) {
-          return (
-            <article key={id} className="menu-item">
-              <img src={img} alt={title} className="photo" />
-              <div className="item-info">
-                <header>
-                  <h4 className="menuname"> {title} </h4>
-                  <h4 className="price"> ${price} </h4>
-                </header>
-                <p className="item-text"> {desc} </p>
-              </div>
-            </article>
-          );
-        } else {
-          if (pdf !== null) {
-            return (
-              <article key={id} className="menu-item">
-                <a href={pdf}><img src={images.menu_screen} alt={title} className="photo" /></a>
-                <div className="item-info">
-                  <header>
-                    <h4 className="menuname"> {title} </h4>
-                  </header>
-                  <p className="item-text">{desc} </p>
-                </div>
-              </article>
-            );
-          } else {
-            return (
-              <article key={id} className="menu-item">
-                <div className="item-info">
-                  <header>
-                    <h4 className="menuname"> {title} </h4>
-                    <h4 className="price"> ${price} </h4>
-                  </header>
-                  <p className="item-text"> {desc} </p>
-                </div>
-              </article>
-            );
-          }
-        }
-        
-      })}
-    </div>
-  );
-};
-
-export default Menu;
+import React from 'react';
+import images from '../../constants/images';
+export default function Menu({
+  items
+}) {
+  return <div className="menu-grid">{items.map(({
+      id,
+      title,
+      img,
+      desc,
+      price,
+      pdf
+    }) => <article key={`${id}-${title}`} className="menu-item">
+      {img && <img src={img} alt={title} className="dish-photo" loading="lazy" />}
+      {pdf && <a href={pdf} className="pdf-preview">
+        <img src={images.menu_screen} alt="View sushi and sashimi menu PDF" loading="lazy" />
+      </a>}
+      <div className="item-info">
+        <header>
+          <h3>{title}</h3>
+          {!pdf && <span className="price">${price}</span>}
+        </header>
+        <p>{desc}</p>
+        {pdf && <a className="text-link" href={pdf}>Open menu PDF ↗</a>}
+      </div>
+    </article>)}</div>;
+}

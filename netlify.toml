@@ -1,0 +1,13 @@
+[build]
+  command = "npm run build"
+  publish = "build"
+  functions = "netlify/functions"
+
+[build.environment]
+  NODE_VERSION = "22"
+
+[functions]
+  node_bundler = "esbuild"
+
+# Function paths and rate limit are declared in catering-inquiry.js.
+# public/_redirects places the API rewrite before the existing SPA fallback.

@@ -1,69 +1,41 @@
-import React, { useState } from 'react';
-
-import { data, images } from '../../constants';
-
-//TODO: fake data replace.
-import { items } from '../../constants'
-
-import { Categories, Menu } from '../../components';
-import './FullMenu.css';
+import React from 'react';
+import { useSearchParams } from 'react-router-dom';
+import { items, images } from '../../constants';
+import { Categories } from '../../components';
 import SearchBar from '../SearchBar/SearchBar';
-
-const allCategories = ["all", ...new Set(items.map((item) => item.category))];
-
-const FullMenu = () => {
-    const [menuItems, setMenuItems] = useState(items);
-    const [activeCategory, setActiveCategory] = useState("");
-    const [categories, setCategories] = useState(allCategories);
-
-    const filterItems = (category) => {
-        setActiveCategory(category);
-
-        if (category === "all") {
-            setMenuItems(items);
-            return;
-        }
-
-        const newItems = items.filter((item) => item.category === category);
-        setMenuItems(newItems);
-    };
-
-    const subCategories = [...new Set(menuItems.map((obj) => obj.subCategory))];
-
-    const subCategorizedItems = {}
-
-    subCategories.forEach((subCategory) => {
-        const set = new Set();
-
-        menuItems.forEach((item) => {
-            if (item.subCategory === subCategory) {
-                set.add(item);
-            }
-        });
-
-        subCategorizedItems[subCategory] = set;
+import { ORDER_URL } from '../../constants/restaurant';
+const categories = ['all', ...new Set(items.map(item => item.category))];
+export default function FullMenu() {
+  const [searchParams, setSearchParams] = useSearchParams();
+  const requestedCategory = searchParams.get('category');
+  const activeCategory = categories.includes(requestedCategory) ? requestedCategory : 'all';
+  const setCategory = category => {
+    const next = new URLSearchParams(searchParams);
+    if (category === 'all') next.delete('category');else next.set('category', category);
+    setSearchParams(next, {
+      replace: true
     });
-
-    return (
-    <section className='menu app__bg'>
-        <div className='title'>
-            <img src={images.takeSushiLogo} alt="logo" className="logo" />
-            <h2> Menu List </h2>
-            <div className='underline'></div>
-        </div>
-        <div className='center'>
-            <Categories
-                categories={categories} 
-                activeCategory={activeCategory} 
-                filterItems={filterItems} 
-            />
-            <p>Consuming raw or undercooked meats, poultry, seafood, shellfish or eggs may increase your risk of food borne illness</p>
-            <p>** Dish served raw</p>
-        </div>
-
-        <SearchBar placeholder="🔎🍱 SEARCH" items={subCategorizedItems} />
-    </section>
-    );
-};
-
-export default FullMenu;
+  };
+  const selected = activeCategory === 'all' ? items : items.filter(item => item.category === activeCategory);
+  const groups = selected.reduce((acc, item) => {
+    (acc[item.subCategory] ||= []).push(item);
+    return acc;
+  }, {});
+  return <section className="menu-page section">
+    <div className="menu-heading">
+      <p className="eyebrow">FROM OUR KITCHEN &amp; SUSHI BAR</p>
+      <h1>Something to savor.</h1>
+      <p>Explore our Japanese cuisine, one dish at a time.</p>
+      <div className="actions">
+        <a className="button" href={ORDER_URL}>Order online ↗</a>
+        <a className="text-link" href={images.sushi_menu}>Sushi &amp; sashimi PDF ↗</a>
+      </div>
+    </div>
+    <Categories categories={categories} activeCategory={activeCategory} filterItems={setCategory} />
+    <SearchBar placeholder="Search dishes in this category..." items={groups} />
+    <aside className="menu-notice">
+      <p>Consuming raw or undercooked meats, poultry, seafood, shellfish or eggs may increase your risk of food borne illness.</p>
+      <p>** Dish served raw</p>
+    </aside>
+  </section>;
+}

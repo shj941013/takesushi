@@ -1,0 +1,269 @@
+{
+  "results": [
+    "mobile navigation, Escape focus, category/search/reset, PDF, gallery controls passed",
+    "desktop navigation to every existing route passed",
+    "all sections visible after reload and rapid scroll with IntersectionObserver unavailable",
+    "reduced motion preserves visibility and disables animation",
+    "keyboard tab traversal and skip-link focus indicator passed"
+  ],
+  "links": [
+    {
+      "href": "#main-content",
+      "name": "Skip to content"
+    },
+    {
+      "href": "/",
+      "name": "Take SushiJAPANESE RESTAURANT / SINCE 1995"
+    },
+    {
+      "href": "/",
+      "name": "Home"
+    },
+    {
+      "href": "/about",
+      "name": "Our story"
+    },
+    {
+      "href": "/fullmenu",
+      "name": "Menu"
+    },
+    {
+      "href": "/contact",
+      "name": "Visit us"
+    },
+    {
+      "href": "https://www.epipay.com/take/en/WebOrder?STORE_CODE=MTAwMA==&table_num=MTAwMA==",
+      "name": "Order online"
+    },
+    {
+      "href": "https://www.epipay.com/take/en/WebOrder?STORE_CODE=MTAwMA==&table_num=MTAwMA==",
+      "name": "ORDER ONLINE"
+    },
+    {
+      "href": "/fullmenu",
+      "name": "EXPLORE THE MENU"
+    },
+    {
+      "href": "#welcome",
+      "name": "SCROLL TO DISCOVER"
+    },
+    {
+      "href": "/about",
+      "name": "Our story ✳"
+    },
+    {
+      "href": "/fullmenu",
+      "name": "Explore the full menu ↗"
+    },
+    {
+      "href": "/fullmenu?category=appetizers",
+      "name": "01appetizers"
+    },
+    {
+      "href": "/fullmenu?category=Soup%20%26%20Salad",
+      "name": "02Soup & Salad"
+    },
+    {
+      "href": "/fullmenu?category=Noodles",
+      "name": "03Noodles"
+    },
+    {
+      "href": "/fullmenu?category=Entrees",
+      "name": "04Entrees"
+    },
+    {
+      "href": "/fullmenu?category=Sushi%20%26%20Sashimi",
+      "name": "05Sushi & Sashimi"
+    },
+    {
+      "href": "https://www.instagram.com/takesushi_mi/",
+      "name": ""
+    },
+    {
+      "href": "https://www.instagram.com/takesushi_mi/",
+      "name": "Follow along"
+    },
+    {
+      "href": "https://www.instagram.com/takesushi_mi/",
+      "name": "Sushi and nigiri assortment"
+    },
+    {
+      "href": "https://www.instagram.com/takesushi_mi/",
+      "name": "Rainbow rolls"
+    },
+    {
+      "href": "https://www.instagram.com/takesushi_mi/",
+      "name": "Spicy crab rolls"
+    },
+    {
+      "href": "https://www.instagram.com/takesushi_mi/",
+      "name": "Sushi and sashimi platter"
+    },
+    {
+      "href": "https://www.epipay.com/take/en/WebOrder?STORE_CODE=MTAwMA==&table_num=MTAwMA==",
+      "name": "Order online ↗"
+    },
+    {
+      "href": "/contact",
+      "name": "Location & directions"
+    },
+    {
+      "href": "tel:+12486527800",
+      "name": "+1 (248) 652-7800"
+    },
+    {
+      "href": "tel:+12486524601",
+      "name": "+1 (248) 652-4601"
+    },
+    {
+      "href": "/",
+      "name": ""
+    },
+    {
+      "href": "https://www.instagram.com/takesushi_mi/",
+      "name": ""
+    },
+    {
+      "href": "https://www.facebook.com/profile.php?id=100067170430552",
+      "name": ""
+    },
+    {
+      "href": "tel:+12486527800",
+      "name": "+1 (248) 652-7800"
+    },
+    {
+      "href": "tel:+12486524601",
+      "name": "+1 (248) 652-4601"
+    },
+    {
+      "href": "/",
+      "name": "Home"
+    },
+    {
+      "href": "/about",
+      "name": "Our story"
+    },
+    {
+      "href": "/fullmenu",
+      "name": "Menu"
+    },
+    {
+      "href": "/contact",
+      "name": "Contact"
+    },
+    {
+      "href": "https://www.epipay.com/take/en/WebOrder?STORE_CODE=MTAwMA==&table_num=MTAwMA==",
+      "name": "Order online ↗"
+    }
+  ],
+  "motion": [
+    {
+      "class": "hero",
+      "opacity": "1",
+      "animation": "none"
+    },
+    {
+      "class": "hero-content",
+      "opacity": "1",
+      "animation": "none"
+    },
+    {
+      "class": "hero-art",
+      "opacity": "1",
+      "animation": "none"
+    },
+    {
+      "class": "section intro",
+      "opacity": "1",
+      "animation": "none"
+    },
+    {
+      "class": "section featured",
+      "opacity": "1",
+      "animation": "none"
+    },
+    {
+      "class": "section menu-preview",
+      "opacity": "1",
+      "animation": "none"
+    },
+    {
+      "class": "gallery-section",
+      "opacity": "1",
+      "animation": "none"
+    },
+    {
+      "class": "order-section",
+      "opacity": "1",
+      "animation": "none"
+    },
+    {
+      "class": "visit-preview section",
+      "opacity": "1",
+      "animation": "none"
+    }
+  ],
+  "keyboard": [
+    {
+      "tag": "A",
+      "name": "Skip to content",
+      "outline": "solid"
+    },
+    {
+      "tag": "A",
+      "name": "Take Sushi home",
+      "outline": "solid"
+    },
+    {
+      "tag": "A",
+      "name": "Home",
+      "outline": "solid"
+    },
+    {
+      "tag": "A",
+      "name": "Our story",
+      "outline": "solid"
+    },
+    {
+      "tag": "A",
+      "name": "Menu",
+      "outline": "solid"
+    },
+    {
+      "tag": "A",
+      "name": "Visit us",
+      "outline": "solid"
+    },
+    {
+      "tag": "A",
+      "name": "Order online",
+      "outline": "solid"
+    },
+    {
+      "tag": "A",
+      "name": "ORDER ONLINE",
+      "outline": "solid"
+    },
+    {
+      "tag": "A",
+      "name": "EXPLORE THE MENU",
+      "outline": "solid"
+    },
+    {
+      "tag": "A",
+      "name": "SCROLL TO DISCOVER",
+      "outline": "solid"
+    },
+    {
+      "tag": "A",
+      "name": "Our story ✳",
+      "outline": "solid"
+    },
+    {
+      "tag": "A",
+      "name": "Explore the full menu ↗",
+      "outline": "solid"
+    }
+  ],
+  "consoleErrors": []
+}

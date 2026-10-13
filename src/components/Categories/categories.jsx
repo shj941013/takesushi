@@ -1,23 +1,8 @@
-import React from "react";
-
-const Categories = ({ categories, filterItems, activeCategory }) => {
-  return (
-    <div className="btn-container">
-      {categories.map((category, index) => {
-        return (
-          <button
-            type="button"
-            className={`${
-              activeCategory === category ? "filter-btn active" : "filter-btn"
-            }`}
-            key={index}
-            onClick={() => filterItems(category)}>
-            {category}
-          </button>
-        );
-      })}
-    </div>
-  );
-};
-
-export default Categories;
+import React from 'react';
+export default function Categories({
+  categories,
+  filterItems,
+  activeCategory
+}) {
+  return <div className="category-list" aria-label="Menu categories">{categories.map(category => <button type="button" key={category} className={activeCategory === category ? 'filter-btn selected' : 'filter-btn'} aria-pressed={activeCategory === category} onClick={() => filterItems(category)}>{category === 'all' ? 'All dishes' : category}</button>)}</div>;
+}

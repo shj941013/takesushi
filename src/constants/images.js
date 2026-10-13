@@ -1,5 +1,5 @@
 import bg from '../assets/bg.png';
-import chef from '../assets/chef.jpg';
+import chef from '../assets/chef-web.jpg';
 import G from '../assets/G.png';
 import knife from '../assets/knife.png';
 import menu from '../assets/menu.png';
@@ -8,7 +8,7 @@ import spoon from '../assets/spoon.svg';
 import findus from '../assets/findus.png';
 import sign from '../assets/sign.png';
 import quote from '../assets/quote.png';
-import takeSushiLogo from '../assets/Take-Sushi-logo.png';
+import takeSushiLogo from '../assets/TAKE_SUSHI_LOGO-transparent.png';
 import assortment from '../assets/assortments.jpg'
 import assortment2 from '../assets/assortment2.jpg'
 import massSpicyCalifornia from '../assets/spicy-crab-roll.jpg'
@@ -17,11 +17,11 @@ import header from '../assets/header.jpg'
 import coverphoto from '../assets/cover_photo.jpg'
 import coverphoto2 from '../assets/cover_photo2.jpg'
 import coverphoto3 from '../assets/cover_photo3.png'
-import manager from '../assets/manager.jpg'
+import manager from '../assets/manager-web.jpg'
 import sushi_menu from '../assets/sushi-menu.pdf'
 import menu_screen from '../assets/menu_screen.jpg'
 
-export default {
+const images = {
   bg,
   chef,
   G,
@@ -45,3 +45,5 @@ export default {
   sushi_menu,
   menu_screen
 };
+
+export default images;
